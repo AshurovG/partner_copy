@@ -1,0 +1,165 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.item-page {
+  //   background-color: aqua;
+  margin-top: 200px;
+  margin-bottom: 100px;
+
+  &__inner {
+    max-width: $content-width;
+    width: 85vw;
+    margin: 0 auto;
+
+    &_back {
+      display: flex;
+      justify-content: end;
+      width: 100%;
+
+      &-btn {
+        font-size: 20px;
+        height: 60px;
+      }
+    }
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+
+    &_adapt-title {
+      display: none;
+    }
+
+    &_slider {
+      width: 50%;
+
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+      }
+    }
+    &_text {
+      width: 50%;
+      &_title {
+        font-size: 40px;
+        color: $brand-color;
+      }
+      &_description {
+        font-size: 28px;
+        color: $brand-secondary;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .item-page {
+    &__content {
+      &_text {
+        width: 45%;
+      }
+      &_slider {
+        width: 60%;
+      }
+    }
+  }
+}
+
+@include largeTablet {
+  .item-page {
+    margin-top: 220px;
+    margin-bottom: 80px;
+    &__content {
+      gap: 30px;
+      &_text {
+        width: 40%;
+        &_title {
+          font-size: 36px;
+        }
+        &_description {
+          font-size: 24px;
+        }
+      }
+      &_slider {
+        width: 70%;
+      }
+    }
+  }
+}
+
+@include mediumTablet {
+  .item-page__inner_back-btn {
+    font-size: 18px;
+    height: 55px;
+  }
+  .item-page {
+    margin-top: 200px;
+    margin-bottom: 60px;
+    &__content {
+      gap: 20px;
+      &_text {
+        &_title {
+          font-size: 32px;
+        }
+        &_description {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+
+@include smallTablet {
+  .item-page__inner_back-btn {
+    font-size: 18px;
+    height: 50px;
+  }
+  .item-page {
+    &__content {
+      gap: 20px;
+      &_text {
+        &_title {
+          font-size: 28px;
+        }
+        &_description {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@include mobileLandscape {
+  .item-page__inner_back-btn {
+    font-size: 16px;
+    height: 40px;
+  }
+  .item-page {
+    margin-top: 160px;
+    &__content {
+      flex-direction: column;
+
+      &_adapt-title {
+        display: block;
+        color: $brand-color;
+      }
+      &_text {
+        width: 100%;
+        &_title {
+          display: none;
+          font-size: 28px;
+        }
+        &_description {
+          font-size: 20px;
+        }
+      }
+      &_slider {
+        width: 100%;
+      }
+    }
+  }
+}

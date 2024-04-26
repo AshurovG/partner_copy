@@ -1,0 +1,94 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.auth__page {
+    min-height: 100vh;
+    margin-top: 250px;
+    color: $brand-color;
+
+    &-title {
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: 30px;
+        color: $brand-color;
+        text-align: center;
+    }
+
+    &-form {
+        width: 30%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        
+        &-input {
+            border-radius: 5px;
+            border: 1px solid $brand-color;
+            height: 50px;
+            max-height: 50px;
+            text-align: left;
+            padding-left: 10px;
+            width: 100%;
+            font-size: 26px;
+        
+            &-message {
+              font-size: 16px;
+              color: red;
+              position: absolute;
+              left: 0;
+            }
+        
+            &:focus {
+              border: 2px solid $brand-color;
+            }
+        }
+
+        &-btn {
+            width: 100%;
+            display: block;
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+}
+
+
+@include largeTablet {
+    .auth__page {
+        &-form {
+            width: 50%;
+        }
+    }
+}
+
+@include mobileLandscape {
+    .auth__page {
+        &-title {
+            font-size: 26px;
+        }
+
+        &-form {
+            width: 70%;
+
+            &-input {
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+@include ultraSmallMobile {
+    .auth__page {
+        &-title {
+            font-size: 22px;
+        }
+
+        &-form {
+            width: 85vw;
+
+            &-input {
+                font-size: 18px;
+            }
+        }
+    }
+}

@@ -1,0 +1,324 @@
+@import "../../styles/variables.scss";
+@import "../../styles//mixins.scss";
+
+.footer {
+  background-color: $background-color;
+  background-image: url("../../assets/images/bg_new.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 30px;
+
+  // height: 300px;
+  //   border-top: 1px solid #fff;
+  color: $brand-secondary;
+
+  &__inner {
+    max-width: $content-width;
+    width: 70vw;
+    margin: 0 auto;
+    padding: 120px 0;
+    height: 80%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+
+    & > * {
+      flex-grow: 1; /* Позволяет элементам растягиваться и занимать доступное пространство */
+      flex-basis: 0;
+    }
+
+    &_info {
+      // display: flex;
+      width: 200px;
+    }
+
+    &_text {
+      font-size: 28px;
+      margin-bottom: 80px;
+
+      &_mobile {
+        display: none;
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+    }
+
+    &_left {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      &_logo {
+        // height: 50%;
+        width: 120px;
+      }
+      &_name {
+        font-size: 50px;
+      }
+      &_socials {
+        // width: 70%;
+        display: flex;
+        gap: 20px;
+
+        a {
+          svg {
+            width: 40px;
+          }
+        }
+      }
+    }
+
+    &_right {
+      // width: 60%;
+      // width: 40%;
+      &_title {
+        margin-bottom: 24px;
+        font-size: 30px;
+        font-weight: 800;
+      }
+      &_contacts {
+        font-family: "Cormorant Infant", serif;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: space-between;
+        font-size: 28px;
+        margin-bottom: 24px;
+
+        a {
+          cursor: pointer;
+          display: block;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .footer__inner {
+    width: 85vw;
+
+    &_right {
+      &_contacts {
+        font-size: 28px;
+      }
+      &_title {
+        // font-size: 36px;
+      }
+    }
+
+    &_text {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@include mediumTablet {
+  .footer__inner_left {
+    margin: 0 auto;
+
+    // height: 60%;
+    &_socials {
+      // width: 80%;
+    }
+  }
+
+  .footer__inner_info {
+    width: 100%;
+  }
+  .footer__inner_right {
+    // width: 100%;
+
+    // &_title {
+    //   display: none;
+    // }
+
+    &_contacts {
+      // align-items: end;
+
+      // flex-direction: column-reverse;
+      gap: 30px;
+    }
+  }
+}
+
+@include smallTablet {
+  .footer {
+    height: auto;
+    &__inner {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      &_info {
+        padding-top: 35px;
+        order: 1;
+        text-align: center;
+      }
+
+      &_text {
+        display: none;
+
+        &_mobile {
+          display: block;
+        }
+      }
+
+      &_left {
+        // &_logo {
+        //   width: 130px;
+        // }
+        &_socials {
+          // width: 65%;
+          justify-content: center;
+          a {
+            svg {
+              width: 35px;
+            }
+          }
+        }
+      }
+
+      &_right {
+        &_contacts {
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+@include mobileLandscape {
+  .footer {
+    &__inner {
+      &_left {
+        &_logo {
+          width: 90px;
+        }
+
+        &_name {
+          font-size: 55px;
+        }
+      }
+      &_right {
+        &_title {
+          font-size: 26px;
+        }
+        &_contacts {
+          font-size: 24px;
+          gap: 10px;
+        }
+      }
+
+      &_text {
+        &_mobile {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .footer {
+    &__inner {
+      padding: 70px 0;
+      &_left {
+        // &_logo {
+        //   width: 110px;
+        // }
+        &_name {
+          font-size: 40px;
+        }
+
+        &_socials {
+          // width: 80%;
+          a {
+            svg {
+              width: 35px;
+            }
+          }
+        }
+      }
+      &_text {
+        &_mobile {
+          // text-align: left;
+        }
+      }
+
+      &_right {
+        &_contacts {
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+@include extraSmallMobile {
+  .footer {
+    &__inner {
+      &_left {
+        gap: 5px;
+        &_logo {
+          width: 70px;
+        }
+        &_name {
+          font-size: 30px;
+        }
+        &_socials {
+          // width: 60%;
+          a {
+            svg {
+              width: 30px;
+            }
+          }
+        }
+      }
+
+      &_text {
+        &_mobile {
+          font-size: 22px;
+        }
+      }
+
+      &_right {
+        &_title {
+          font-size: 24px;
+        }
+
+        &_contacts {
+          font-size: 22px;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+@include extraSmallMobile {
+  .footer {
+    &__inner {
+      &_right {
+        &_title {
+          font-size: 22px;
+        }
+        &_contacts {
+          font-size: 20px;
+        }
+      }
+
+      &_text {
+        &_mobile {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

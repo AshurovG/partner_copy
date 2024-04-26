@@ -1,0 +1,179 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.block {
+  color: #000;
+  margin-top: 26px;
+  &__inner {
+    height: 500px;
+    max-width: $content-width;
+    width: 85vw;
+    margin: 0 auto;
+
+    display: flex;
+    // flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+
+    &_content {
+      box-sizing: border-box;
+
+      background-color: black;
+      height: 70%;
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      // padding: 20px;
+
+      &_title {
+        color: $brand-color;
+        font-size: 34px;
+        font-weight: 800;
+      }
+      &_description {
+        color: #fff;
+        font-size: 28px;
+      }
+      &_action {
+        font-size: 24px;
+      }
+    }
+
+    &_image {
+      width: 50%;
+      height: 500px;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        position: absolute; // Используйте absolute позиционирование
+        top: 50%; // Центрируйте вертикально
+        left: 50%; // Центрируйте горизонтально
+        transform: translate(
+          -50%,
+          -50%
+        ); // Смещайте изображение на половину его ширины и высоты вверх и влево
+        object-fit: cover;
+        height: auto;
+      }
+    }
+  }
+}
+
+@include mediumTablet {
+  .block {
+    &__inner {
+      &_content {
+        &_title {
+          font-size: 32px;
+        }
+        &_description {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+// @media (max-width: 1000px) {
+//   .block {
+//     &__inner {
+//       height: 420px;
+//       &_content {
+//         width: 70%;
+//         &_action {
+//           font-size: 20px;
+//         }
+//       }
+//     }
+//   }
+// }
+@include smallTablet {
+  .block {
+    &__inner {
+      // height: 350px;
+      &_content {
+        // width: 75%;
+
+        &_title {
+          font-size: 30px;
+        }
+        &_description {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+
+@include mobileLandscape {
+  .block {
+    &__inner {
+      height: auto;
+      align-items: center;
+      &_content {
+        width: 100%;
+
+        &_title {
+          font-size: 32px;
+        }
+        &_description {
+          font-size: 20px;
+        }
+      }
+      &_image {
+        box-sizing: border-box;
+        width: 100%;
+        // border: 5px solid $brand-color;
+      }
+    }
+  }
+}
+@include mobile {
+  .block {
+    &__inner {
+      flex-direction: column-reverse;
+      height: auto;
+      &_content {
+        gap: 10px;
+        &_title {
+          font-size: 26px;
+        }
+        &_description {
+          font-size: 18px;
+        }
+      }
+      &_image {
+        position: initial;
+        height: auto;
+        width: 100%;
+
+        img {
+          position: initial;
+          top: 0;
+          left: 0;
+          transform: none;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@include extraSmallMobile {
+  .block {
+    &__inner {
+      &_content {
+        gap: 15px;
+        &_title {
+          font-size: 22px;
+        }
+        &_description {
+          font-size: 16px;
+        }
+        &_action {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

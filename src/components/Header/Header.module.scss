@@ -1,0 +1,356 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: $brand-color;
+
+  text-align: center;
+  background: $background-color;
+  z-index: 9999;
+  transition: all 300ms ease-in-out;
+  border-bottom: 1px solid #fff;
+
+  &.expanded {
+    transform: translateY(0);
+    height: auto; // Adjust based on your content
+  }
+}
+// for reveal animation
+
+.headerDown {
+  transform: translate3d(0, -100%, 0);
+}
+// ----------------------------------
+
+.header {
+  &__inner {
+    padding: 48px 0;
+    margin: 0 auto;
+    max-width: $content-width;
+    width: 85vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_menu {
+      cursor: pointer;
+      font-size: 36px;
+      font-weight: 800;
+
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    &_contact {
+      font-family: "Cormorant Infant", serif;
+      font-size: 40px;
+    }
+  }
+}
+
+.submenu {
+  background-color: $background-color;
+  height: 300px;
+  max-width: $content-width;
+  width: 85vw;
+  margin: 0 auto;
+
+  padding-bottom: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__info {
+    font-size: 24px;
+    text-align: left;
+
+    h2 {
+      cursor: pointer;
+    }
+  }
+
+  &__slider {
+    color: $brand-color;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &_inner {
+      width: 100%;
+      padding: 5px;
+      display: block;
+      &--card {
+        padding: 10px 0;
+        max-width: 308px;
+        font-size: 50px;
+        text-align: center;
+        margin-left: 0px;
+        transition: all 0.1s ease;
+
+        h2 {
+          font-size: 20px;
+          font-weight: 600;
+          margin-top: 5px;
+          //padding-left: 8px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-align: left;
+          line-height: 1;
+        }
+
+        img {
+          // min-width: 100%;
+          max-width: 100%;
+          object-fit: cover;
+          height: 220px;
+          border-radius: 1vw;
+          overflow: hidden;
+          display: flex;
+          align-items: flex-end;
+          -webkit-box-pack: center;
+          justify-content: center;
+          border-radius: 10px;
+        }
+
+        &:hover {
+          transform: scale(1.05);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.cancel__icon {
+  display: inline-block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 5px;
+}
+
+.cancel__icon::before,
+.cancel__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: $brand-color;
+  transform-origin: center;
+}
+
+.cancel__icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.cancel__icon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@include extraLargeTablet {
+  .submenu {
+    &__info {
+      font-size: 22px;
+    }
+    &__slider {
+      width: 700px;
+      height: 250px;
+      &_inner {
+        &--card {
+          img {
+            height: 200px;
+            width: 250px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include largeTablet {
+  .submenu {
+    &__info {
+      font-size: 20px;
+    }
+    &__slider {
+      width: 600px;
+      height: 220px;
+      &_inner {
+        &--card {
+          img {
+            height: 170px;
+            width: 210px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mediumTablet {
+  .submenu {
+    &__info {
+      font-size: 18px;
+    }
+    &__slider {
+      width: 500px;
+      height: 200px;
+      &_inner {
+        &--card {
+          img {
+            height: 150px;
+            width: 180px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include smallTablet {
+  .header__inner {
+    padding: 45px 0;
+  }
+  .header__inner_menu {
+    h2 {
+      font-size: 40px;
+    }
+  }
+  .header__inner_contact {
+    font-size: 32px;
+  }
+  .submenu {
+    flex-direction: column;
+    gap: 20px;
+
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 80%;
+    }
+    &__slider {
+      width: 90%;
+      height: 200px;
+      &_inner {
+        &--card {
+          img {
+            height: 150px;
+            width: 220px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobileLandscape {
+  .header__inner {
+    padding: 43px 0;
+  }
+  .submenu {
+    flex-direction: column;
+    gap: 15px;
+
+    &__info {
+      width: 90%;
+      font-size: 18px;
+    }
+    &__slider {
+      width: 95%;
+      height: 180px;
+      &_inner {
+        &--card {
+          img {
+            height: 130px;
+            width: 190px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .header__inner {
+    padding: 41px 0;
+    flex-direction: row-reverse;
+    &_menu {
+      h2 {
+        display: none;
+      }
+    }
+    &_contact {
+      font-size: 28px; // было 32
+    }
+  }
+  .submenu {
+    flex-direction: column;
+    // gap: 10px;
+
+    &__info {
+      width: 100%;
+      font-size: 18px;
+    }
+    &__slider {
+      width: 100%;
+      height: 160px;
+      &_inner {
+        // font-size: 10px !important;
+        &--card {
+          img {
+            height: 120px;
+            width: 170px;
+          }
+
+          h2 {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+@include extraSmallMobile {
+  .header__inner {
+    padding: 35px 0;
+    &_contact {
+      font-size: 20px;
+    }
+  }
+  .submenu {
+    flex-direction: column;
+    // gap: 10px;
+
+    &__info {
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+}
+
+@include ultraSmallMobile {
+  .header__inner {
+    &_contact {
+      font-size: 20px;
+    }
+  }
+  .submenu {
+    flex-direction: column;
+    // gap: 10px;
+
+    &__info {
+      width: 110%;
+      font-size: 14px;
+    }
+  }
+}

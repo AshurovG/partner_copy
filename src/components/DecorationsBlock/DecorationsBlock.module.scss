@@ -1,0 +1,287 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.block {
+  margin-top: 82px;
+  &__inner {
+    height: auto;
+    width: 85vw;
+    max-width: $content-width;
+    margin: 0 auto;
+
+    //border: 5px solid $brand-color;
+
+    box-sizing: border-box;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    &_image {
+      width: 60%;
+    }
+    &_title {
+      margin-top: -70px;
+      display: block;
+      padding: 0 40px;
+      background-color: black;
+      text-align: center;
+      font-size: 34px;
+      color: $brand-color;
+    }
+    &_description {
+      color: $brand-secondary;
+      font-size: 28px;
+      text-align: center;
+    }
+    &_action {
+      font-size: 28px;
+    }
+  }
+}
+
+.slider {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &_inner {
+    width: 100%;
+    padding: 5px;
+    &--card {
+      padding: 10px 0;
+      max-width: 190px;
+      margin-left: 0px;
+      margin-right: 0px;
+      transition: all 0.1s ease;
+
+      img {
+        margin-left: 10px;
+        // min-width: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        height: 155px;
+        border-radius: 1vw;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+        -webkit-box-pack: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@include extraLargeTablet {
+  .slider_inner--card {
+    img {
+      margin-left: 10px;
+    }
+  }
+}
+@include tablet {
+  .slider {
+    width: 90%;
+    &_inner--card {
+      img {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+@include largeTablet {
+  .slider {
+    width: 100%;
+    &_inner--card {
+      img {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+@include mediumTablet {
+  .block__inner {
+    //border: 3px solid $brand-color;
+    &_title {
+      font-size: 32px;
+      margin-top: -60px;
+    }
+    &_description {
+      font-size: 24px;
+    }
+  }
+  .slider {
+    height: 200px;
+    width: 100%;
+    &_inner--card {
+      img {
+        // margin-left: 25%;
+        height: 140px;
+        width: 140px;
+      }
+    }
+  }
+}
+
+@include smallTablet {
+  // .block__inner {
+  //   &_title {
+  //     font-size: 36px;
+  //     margin-top: -60px;
+  //   }
+  //   &_description {
+  //     font-size: 24px;
+  //   }
+  // }
+  .slider {
+    height: 180px;
+    width: 100%;
+    &_inner--card {
+      img {
+        margin-left: 20px;
+        height: 130px;
+        width: 130px;
+      }
+    }
+  }
+}
+
+@include mobileLandscape {
+  .block__inner {
+    gap: 20px;
+    height: auto;
+    &_title {
+      font-size: 30px;
+      margin-top: -50px;
+    }
+    &_description {
+      font-size: 20px;
+    }
+    &_action {
+      font-size: 20px;
+    }
+  }
+  .slider {
+    height: 160px;
+    width: 90%;
+    &_inner--card {
+      img {
+        margin-left: 15%;
+        height: 115px;
+        width: 115px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .block__inner {
+    gap: 15px;
+    //border: 2px solid $brand-color;
+    &_title {
+      padding: 0 30px;
+      font-size: 26px;
+      margin-top: -50px;
+    }
+    &_description {
+      font-size: 18px;
+    }
+  }
+  .slider {
+    height: 140px;
+    width: 100%;
+    &_inner--card {
+      img {
+        // margin-left: 15%;
+        height: 110px;
+        width: 110px;
+      }
+    }
+  }
+}
+@include extraSmallMobile {
+  .block__inner {
+    height: auto;
+    gap: 10px;
+    &_title {
+      padding: 0 20px;
+      font-size: 22px;
+      margin-top: -50px;
+    }
+    &_description {
+      font-size: 16px;
+    }
+    &_action {
+      font-size: 16px;
+    }
+  }
+  .slider {
+    height: 140px;
+    width: 95%;
+    &_inner--card {
+      img {
+        // margin-left: 15%;
+        height: 100px;
+        width: 100px;
+      }
+    }
+  }
+}
+@include ultraSmallMobile {
+  .block__inner {
+    &_title {
+      padding: 0 10px;
+      font-size: 22px;
+      margin-top: -50px;
+    }
+    &_description {
+      font-size: 16px;
+    }
+    &_action {
+      font-size: 16px;
+    }
+  }
+  .slider {
+    height: 130px;
+    width: 95%;
+    &_inner--card {
+      img {
+        // margin-left: 15%;
+        height: 90px;
+        width: 90px;
+      }
+    }
+  }
+}
+@include tinyMobile {
+  .block__inner {
+    &_title {
+      padding: 0 10px;
+      font-size: 22px;
+      margin-top: -50px;
+    }
+    &_description {
+      font-size: 16px;
+    }
+    &_action {
+      font-size: 16px;
+    }
+  }
+  .slider {
+    height: 130px;
+    width: 60%;
+    &_inner--card {
+      img {
+        margin-left: 10%;
+        height: 90px;
+        width: 90px;
+      }
+    }
+  }
+}

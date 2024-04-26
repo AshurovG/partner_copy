@@ -1,0 +1,107 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.category-page {
+  margin-top: 200px;
+  &__inner {
+    max-width: $content-width;
+    width: 85vw;
+    margin: 0 auto;
+    &_title {
+      font-size: 40px;
+      font-weight: 800;
+      color: $brand-color;
+    }
+    &_description {
+      font-size: 28px;
+      color: $brand-secondary;
+    }
+    &_content {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      row-gap: 30px;
+      column-gap: 30px;
+    }
+  }
+}
+
+.modal_image {
+  height: 70vh;
+  border: 2px solid $brand-color;
+}
+
+@include mediumTablet {
+  .category-page {
+    margin-top: 190px;
+    &__inner {
+      &_title {
+        font-size: 36px;
+      }
+      &_description {
+        font-size: 24px;
+      }
+      &_content {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
+
+@include smallTablet {
+  .category-page {
+    margin-top: 170px;
+    &__inner {
+      &_title {
+        font-size: 32px;
+      }
+      &_description {
+        font-size: 20px;
+      }
+      &_content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  .modal_image {
+    height: auto;
+    width: 70vw;
+  }
+}
+
+@include mobile {
+  .category-page {
+    margin-top: 150px;
+    &__inner {
+      &_title {
+        font-size: 30px;
+      }
+      &_description {
+        font-size: 18px;
+      }
+      &_content {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+  .modal_image {
+    height: auto;
+    width: 90vw;
+  }
+}
+
+// @include smallTablet {
+//   .admin__page {
+//     &-cards {
+//       grid-template-columns: repeat(2, 1fr);
+//     }
+//   }
+// }
+
+// @include mobile {
+//   .admin__page {
+//     &-cards {
+//       grid-template-columns: 1fr;
+//     }
+//   }
+// }

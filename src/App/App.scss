@@ -1,0 +1,18 @@
+@import "../styles/variables.scss";
+
+.Toastify__toast {
+    color: #4caf50;
+}
+
+.Toastify__toast--success {
+    background-color: $background-color;
+}
+
+.Toastify__toast--error {
+    background-color: $background-color;
+    color: #f44336;
+}
+
+.Toastify__toast-body {
+    font-size: 18px;
+}
