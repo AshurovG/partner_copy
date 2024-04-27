@@ -1,8 +1,8 @@
 # Freelance заказ от компании "ООО Партнер" (копия без API)
 
-### Разработчики проекта: [AshurovG], [tkoibaev]
+## Разработчики проекта: [AshurovG], [tkoibaev]
 
-### Стек технологий
+## Стек технологий
 
 - Frontend: React, Typescript, Redux Toolkit, SCSS modules, Vite, Framer-motion
 - Backend: Node.js (Express), Typescript, PostgreSQL, Docker, Nginx
