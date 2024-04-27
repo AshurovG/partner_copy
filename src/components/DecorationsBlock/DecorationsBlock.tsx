@@ -5,9 +5,9 @@ import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
-import np1 from "../../assets/images/nameplates/np1.png"
-import np2 from "../../assets/images/nameplates/np2.png"
-import np3 from "../../assets/images/nameplates/np3.png"
+import np1 from "../../assets/images/nameplates/med1_mock.jpg"
+import np2 from "../../assets/images/nameplates/med2_mock.jpg"
+import np3 from "../../assets/images/nameplates/med3_mock.jpg"
 import np4 from "../../assets/images/nameplates/np4.png"
 import np5 from "../../assets/images/nameplates/np5.png"
 import np6 from "../../assets/images/nameplates/np6.png"
@@ -26,13 +26,13 @@ const dataTop = [
     url: np3,
   },
   {
-    url: np4,
+    url: np1,
   },
   {
-    url: np5,
+    url: np2,
   },
   {
-    url: np6,
+    url: np3,
   },
 ]
 
@@ -107,9 +107,10 @@ const DecorationsBlock = () => {
           <br /> ШИЛЬДЫ, КУЛОНЫ
         </h2>
         <p className={styles.block__inner_description}>
-          Мы специализируемся на производстве декоративных изделий и украшений,
-          таких как медальоны, шильды, значки, брелоки и кулоны, которые могут
-          быть изготовлены как на двухсторонней клеевой основе, так и без нее.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nulla
+          repellat veritatis aut. Rem aspernatur ipsum quos architecto, atque
+          maiores pariatur earum error dicta expedita quibusdam eligendi optio
+          recusandae minima.
         </p>
         <Link to="/decorations">
           <Button

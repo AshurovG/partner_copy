@@ -15,12 +15,12 @@ import { motion, AnimatePresence } from "framer-motion"
 import ArrowLeftIcon from "components/Icons/ArrowLeftIcon"
 import ArrowRightIcon from "components/Icons/ArrowRightIcon"
 
-import Bottles from "../../assets/images/bottles_block_img.jpg"
-import Decorations from "../../assets/images/decs.png"
-import Simple from "../../assets/images/simple_package.png"
-import Complex from "../../assets/images/complex_package.png"
-import Glasses from "../../assets/images/glasses_block_img.jpg"
-import Locks from "../../assets/images/locks-block-background.jpg"
+import Bottles from "../../assets/images/bottles_mock.jpg"
+import Decorations from "../../assets/images/decs_mock.jpg"
+import Simple from "../../assets/images/package2_mock.jpg"
+import Complex from "../../assets/images/package1_mock.jpg"
+import Glasses from "../../assets/images/glasses_mock.jpeg"
+import Locks from "../../assets/images/locks_mock.jpeg"
 
 const dataTop = [
   {

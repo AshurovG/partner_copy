@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 
 import "react-image-gallery/styles/scss/image-gallery.scss"
-import Bottles from "../../assets/images/glasses_block_img.jpg"
+import Bottles from "../../assets/images/glasses_mock.jpeg"
 
 const Animation = {
   hidden: { y: 100, opacity: 0 },
@@ -32,8 +32,8 @@ const GlassesBlock = () => {
             СТЕКЛЯННАЯ ПОСУДА
           </h2>
           <p className={styles.block__inner_content_description}>
-            Возможно изготовление по вашим чертежам или разбработка с нуля
-            нашими специалистами
+            Описание: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Corrupti animi, modi facilis porro odio accusamus?
           </p>
           <div>
             <Link to="/glasses">

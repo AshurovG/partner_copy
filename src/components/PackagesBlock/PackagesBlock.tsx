@@ -1,7 +1,7 @@
 import styles from "./PackagesBlock.module.scss"
 import Button from "components/Button"
-import Complex from "../../assets/images/complex_package.png"
-import Simple from "../../assets/images/simple_package.png"
+import Complex from "../../assets/images/package1_mock.jpg"
+import Simple from "../../assets/images/package2_mock.jpg"
 import { Link } from "react-router-dom"
 
 import { motion } from "framer-motion"
@@ -42,7 +42,8 @@ const PackagesBlock = () => {
           <img src={Simple} className={styles.card__image}></img>
           <h2 className={styles.card__title}>УПАКОВКА ИЗ КАРТОНА</h2>
           <p className={styles.card__description}>
-            Предлагаем все виды и типы упаковки из различных видов картона
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
+            possimus!
           </p>
           <Link to="/simple-package">
             <Button
@@ -69,7 +70,8 @@ const PackagesBlock = () => {
           <img src={Complex} className={styles.card__image}></img>
           <h2 className={styles.card__title}>ПРЕМИУМ УПАКОВКА</h2>
           <p className={styles.card__description}>
-            Подарочные упаковки с использованием фурнитуры высокого качества
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
+            possimus!{" "}
           </p>
           <Link to="/complex-package">
             <Button

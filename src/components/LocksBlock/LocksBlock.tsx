@@ -1,8 +1,8 @@
-import styles from "./LocksBlock.module.scss";
-import { Link } from "react-router-dom";
-import Button from "components/Button";
-import { motion } from "framer-motion";
-import Locks from "../../assets/с2.jpg";
+import styles from "./LocksBlock.module.scss"
+import { Link } from "react-router-dom"
+import Button from "components/Button"
+import { motion } from "framer-motion"
+import Locks from "../../assets/images/locks_mock.jpeg"
 
 const Animation = {
   hidden: { y: 100, opacity: 0 },
@@ -14,7 +14,7 @@ const Animation = {
       duration: 0.5,
     },
   },
-};
+}
 
 const LocksBlock = () => {
   return (
@@ -51,7 +51,7 @@ const LocksBlock = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LocksBlock;
+export default LocksBlock
