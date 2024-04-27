@@ -40,10 +40,10 @@ const PackagesBlock = () => {
           className={styles.card}
         >
           <img src={Simple} className={styles.card__image}></img>
-          <h2 className={styles.card__title}>УПАКОВКА ИЗ КАРТОНА</h2>
+          <h2 className={styles.card__title}>Категория 3</h2>
           <p className={styles.card__description}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
-            possimus!
+            Описание: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Dolores, possimus!
           </p>
           <Link to="/simple-package">
             <Button
@@ -68,10 +68,10 @@ const PackagesBlock = () => {
           className={styles.card}
         >
           <img src={Complex} className={styles.card__image}></img>
-          <h2 className={styles.card__title}>ПРЕМИУМ УПАКОВКА</h2>
+          <h2 className={styles.card__title}>Категория 4</h2>
           <p className={styles.card__description}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
-            possimus!{" "}
+            Описание: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Dolores, possimus!{" "}
           </p>
           <Link to="/complex-package">
             <Button

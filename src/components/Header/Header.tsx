@@ -25,33 +25,33 @@ import Locks from "../../assets/images/locks_mock.jpeg"
 const dataTop = [
   {
     url: Bottles,
-    title: "Эксклюзивная стеклянная тара",
+    title: "Категория 1",
     key: "bottles",
   },
   {
     url: Locks,
-    title: "Эксклюзивные укупорочные устройства",
+    title: "Категория 2",
     key: "locks",
   },
   {
-    url: Complex,
-    title: "Премиум упаковка",
-    key: "complex-package",
+    url: Simple,
+    title: "Категория 3",
+    key: "simple-package",
   },
   {
-    url: Simple,
-    title: "Упаковка из картона",
-    key: "simple-package",
+    url: Complex,
+    title: "Категория 4",
+    key: "complex-package",
   },
 
   {
     url: Decorations,
-    title: "Медальоны, жетоны. шильды, кулоны",
+    title: "Категория 5",
     key: "decorations",
   },
   {
     url: Glasses,
-    title: "Стеклянная посуда",
+    title: "Категория 6",
     key: "glasses",
   },
 ]

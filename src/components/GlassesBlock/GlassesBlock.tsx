@@ -28,9 +28,7 @@ const GlassesBlock = () => {
         className={styles.block__inner}
       >
         <div className={styles.block__inner_content}>
-          <h2 className={styles.block__inner_content_title}>
-            СТЕКЛЯННАЯ ПОСУДА
-          </h2>
+          <h2 className={styles.block__inner_content_title}>Категория 6</h2>
           <p className={styles.block__inner_content_description}>
             Описание: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Corrupti animi, modi facilis porro odio accusamus?

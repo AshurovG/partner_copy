@@ -8,9 +8,6 @@ import "slick-carousel/slick/slick.css"
 import np1 from "../../assets/images/nameplates/med1_mock.jpg"
 import np2 from "../../assets/images/nameplates/med2_mock.jpg"
 import np3 from "../../assets/images/nameplates/med3_mock.jpg"
-import np4 from "../../assets/images/nameplates/np4.png"
-import np5 from "../../assets/images/nameplates/np5.png"
-import np6 from "../../assets/images/nameplates/np6.png"
 
 import ArrowLeftIcon from "components/Icons/ArrowLeftIcon"
 import ArrowRightIcon from "components/Icons/ArrowRightIcon"
@@ -102,15 +99,12 @@ const DecorationsBlock = () => {
         variants={Animation}
         className={styles.block__inner}
       >
-        <h2 className={styles.block__inner_title}>
-          МЕДАЛЬОНЫ, ЖЕТОНЫ,
-          <br /> ШИЛЬДЫ, КУЛОНЫ
-        </h2>
+        <h2 className={styles.block__inner_title}>Категория 5</h2>
         <p className={styles.block__inner_description}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nulla
-          repellat veritatis aut. Rem aspernatur ipsum quos architecto, atque
-          maiores pariatur earum error dicta expedita quibusdam eligendi optio
-          recusandae minima.
+          Описание: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Nisi nulla repellat veritatis aut. Rem aspernatur ipsum quos
+          architecto, atque maiores pariatur earum error dicta expedita
+          quibusdam eligendi optio recusandae minima.
         </p>
         <Link to="/decorations">
           <Button
