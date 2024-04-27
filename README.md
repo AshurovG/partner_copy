@@ -1,30 +1,58 @@
-# React + TypeScript + Vite
+# Freelance заказ от компании "ООО Партнер" (копия без API)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Разработчики проекта: [AshurovG], [tkoibaev]
 
-Currently, two official plugins are available:
+### Стек технологий
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Frontend: React, Typescript, Redux Toolkit, SCSS modules, Vite, Framer-motion
+- Backend: Node.js (Express), Typescript, PostgreSQL, Docker, Nginx
+- Приложение развернуто на Ubuntu VPS, доступ закрыт. Зеракало доступно по [ссылке].
 
-## Expanding the ESLint configuration
+[AshurovG]: https://github.com/AshurovG
+[tkoibaev]: https://github.com/tkoibaev
+[ссылке]: https://ashurovg.github.io/partner_copy/
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Функционал приложения
 
-- Configure the top-level `parserOptions` property like this:
+- Просмотр различных категорий товаров
+- Просмотр товаров из определенной категории
+- Просмотр подробной информации о товаре
+- Обратная связь с компанией через форму с отправкой на почту
+- Редактирование данных сайтов через панель администратора
+- Авторизация администратора
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Экраны приложения
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Главная страница
+
+![Описание изображения](src/markdownImages/page1.png)
+
+![Описание изображения](src/markdownImages/page2.png)
+
+![Описание изображения](src/markdownImages/page3.png)
+
+### Футер и форма обратной связи
+
+![Описание изображения](src/markdownImages/footer.png)
+
+### Навигационное меню
+
+![Описание изображения](src/markdownImages/header.png)
+
+### Вход в режим администратора
+
+![Описание изображения](src/markdownImages/admin.png)
+
+### Сраница категорий в режиме администратора
+
+![Описание изображения](src/markdownImages/admin1.png)
+
+### Окно создания / редактирования товара
+
+![Описание изображения](src/markdownImages/admin2.png)
+
+### Страница редактирования товара
+
+![Описание изображения](src/markdownImages/admin3.png)
+
+![Описание изображения](src/markdownImages/admin4.png)
