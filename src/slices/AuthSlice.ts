@@ -8,11 +8,11 @@ interface DataState {
 const dataSlice = createSlice({
   name: "data",
   initialState: {
-    isAuth: false
+    isAuth: false,
   } as DataState,
   reducers: {
     setIsAuth(state, action: PayloadAction<boolean>) {
-      state.isAuth = action.payload
+      state.isAuth = action.payload;
     },
   },
 });
@@ -20,8 +20,6 @@ const dataSlice = createSlice({
 export const useIsAuth = () =>
   useSelector((state: { mainData: DataState }) => state.mainData.isAuth);
 
-export const {
-    setIsAuth: setIsAuthAction,
-} = dataSlice.actions;
+export const { setIsAuth: setIsAuthAction } = dataSlice.actions;
 
 export default dataSlice.reducer;

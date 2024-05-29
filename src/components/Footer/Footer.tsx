@@ -1,11 +1,8 @@
-// import React from "react"
 import { useLocation } from "react-router-dom";
 import styles from "./Footer.module.scss";
 
-// import Logo from "assets/images/клубочек золотой.png";
 import TelegramIcon from "components/Icons/TelegramIcon";
 import WhatsAppIcon from "components/Icons/WhatsAppIcon";
-// import MailIcon from "components/Icons/MailIcon";
 import ContactForm from "components/ContactForm";
 
 const Footer = () => {

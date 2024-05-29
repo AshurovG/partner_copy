@@ -1,8 +1,8 @@
-import styles from "./BottlesBlock.module.scss"
-import Button from "components/Button"
-import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
-import Bottles from "../../assets/images/bottles_mock.jpg"
+import styles from "./BottlesBlock.module.scss";
+import Button from "components/Button";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import Bottles from "../../assets/images/bottles_mock.jpg";
 
 const Animation = {
   hidden: { y: 100, opacity: 0 },
@@ -14,7 +14,7 @@ const Animation = {
       duration: 0.5,
     },
   },
-}
+};
 
 const BottlesBlock = () => {
   return (
@@ -51,7 +51,7 @@ const BottlesBlock = () => {
         </motion.div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BottlesBlock
+export default BottlesBlock;

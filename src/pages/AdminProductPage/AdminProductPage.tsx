@@ -1,94 +1,94 @@
-import { useState, useEffect } from "react"
-import { useCurrentImageId } from "slices/AdminSlice"
-import { useNavigate } from "react-router-dom"
-import { toast } from "react-toastify"
-import axios from "axios"
-import { useParams } from "react-router-dom"
-import styles from "./AdminProductPage.module.scss"
-import { Response } from "../../types"
-import EditIcon from "components/Icons/EditIcon"
-import BasketIcon from "components/Icons/BasketIcon"
-import Slider from "components/Slider"
-import AddButton from "components/Icons/AddButton"
-import ModalWindow from "components/ModalWindow"
-import Button from "components/Button"
-import ProductForm from "components/PorductForm"
-import ImageForm from "components/ImageForm"
-import Skeleton from "react-loading-skeleton"
-import "react-loading-skeleton/dist/skeleton.css"
+import { useState, useEffect } from "react";
+import { useCurrentImageId } from "slices/AdminSlice";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import styles from "./AdminProductPage.module.scss";
+import { Response } from "../../types";
+import EditIcon from "components/Icons/EditIcon";
+import BasketIcon from "components/Icons/BasketIcon";
+import Slider from "components/Slider";
+import AddButton from "components/Icons/AddButton";
+import ModalWindow from "components/ModalWindow";
+import Button from "components/Button";
+import ProductForm from "components/PorductForm";
+import ImageForm from "components/ImageForm";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 type Image = {
-  id: number
-  original: string
-  thumbnail: string
-}
+  id: number;
+  original: string;
+  thumbnail: string;
+};
 
 type ItemPics = {
-  product_item_id: number
-  url: string
-  product_id: number
-}
+  product_item_id: number;
+  url: string;
+  product_id: number;
+};
 
 type Item = {
-  product_id: number
-  title: string
-  url: string
-  description: string
-  category_id: number
-  items: ItemPics[]
-}
+  product_id: number;
+  title: string;
+  url: string;
+  description: string;
+  category_id: number;
+  items: ItemPics[];
+};
 
 const AdminProductPage = () => {
-  const navigate = useNavigate()
-  const { id } = useParams()
-  const currentImageId = useCurrentImageId()
-  const [item, setItem] = useState<Item>()
-  const [images, setImages] = useState<Image[]>([])
-  const [isDeleteModalOpened, setIsDeleteModalOpened] = useState(false)
-  const [isEditModalOpened, setIsEditModalOpened] = useState(false)
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const currentImageId = useCurrentImageId();
+  const [item, setItem] = useState<Item>();
+  const [images, setImages] = useState<Image[]>([]);
+  const [isDeleteModalOpened, setIsDeleteModalOpened] = useState(false);
+  const [isEditModalOpened, setIsEditModalOpened] = useState(false);
   const [isCreateImageModalOpened, setIsCreateImageModalOpened] =
-    useState(false)
+    useState(false);
   const [isDeleteImageModalOpened, setIsDeleteImageModalOpened] =
-    useState(false)
-  const [isLoading, setIsLoading] = useState<boolean>(true)
+    useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const getItem = async () => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
       const response: Response = await axios(
         `https://partnerev.ru/api/products/${id}`,
         {
           method: "GET",
         }
-      )
+      );
 
-      setItem(response.data)
+      setItem(response.data);
       setImages(
         response.data.items.map((itemPic: ItemPics) => ({
           id: itemPic.product_item_id,
           original: itemPic.url,
           thumbnail: itemPic.url,
         }))
-      )
+      );
       setTimeout(() => {
-        setIsLoading(false)
-      }, 300)
+        setIsLoading(false);
+      }, 300);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   const deleteProduct = async () => {
     try {
       await axios(`https://partnerev.ru/api/products/${id}`, {
         method: "DELETE",
-      })
-      navigate(`/admin?category_id=${item?.category_id}`)
-      toast.success("Товар успешно удален!")
+      });
+      navigate(`/admin?category_id=${item?.category_id}`);
+      toast.success("Товар успешно удален!");
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   const putProduct = async (
     title: string,
@@ -96,17 +96,14 @@ const AdminProductPage = () => {
     file: File | null
   ) => {
     try {
-      const formData = new FormData()
-      // if (token) {
-      //   formData.append("jwt", token)
-      // }
-      formData.append("title", title)
-      formData.append("description", description)
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("description", description);
       if (file) {
-        formData.append("file", file)
-        formData.append("isFileChanged", String(1))
+        formData.append("file", file);
+        formData.append("isFileChanged", String(1));
         if (item) {
-          formData.append("imgUrl", item?.url)
+          formData.append("imgUrl", item?.url);
         }
       }
 
@@ -116,61 +113,51 @@ const AdminProductPage = () => {
         headers: {
           "Content-Type": "multipart/form-data",
         },
-      })
-      setIsEditModalOpened(false)
-      // setIsLoading(true)
-      toast.success("Информация успешно обновлена!")
-      getItem()
+      });
+      setIsEditModalOpened(false);
+      toast.success("Информация успешно обновлена!");
+      getItem();
     } catch (error) {
-      toast.success("Что-то пошло не так...")
-      throw error
+      toast.success("Что-то пошло не так...");
+      throw error;
     }
-  }
+  };
 
   const postImage = async (file: File) => {
-    const formData = new FormData()
-    // if (token) {
-    //   formData.append("jwt", token)
-    // }
-    formData.append("file", file)
+    const formData = new FormData();
+    formData.append("file", file);
     if (item) {
-      formData.append("product_id", String(item.product_id))
+      formData.append("product_id", String(item.product_id));
     }
     try {
       await axios("https://partnerev.ru/api/products_items/", {
         method: "POST",
         data: formData,
-      })
-      getItem()
-      toast.success("Фото успешно добавлено!")
-      // setIsLoading(true)
+      });
+      getItem();
+      toast.success("Фото успешно добавлено!");
     } catch (error) {
-      toast.error("Размер фото не должен превышать 5 МБ!")
-      throw error
+      toast.error("Размер фото не должен превышать 5 МБ!");
+      throw error;
     }
-  }
+  };
 
   const deleteImage = async () => {
     try {
       await axios(`https://partnerev.ru/api/products_items/${currentImageId}`, {
         method: "DELETE",
-        // data: {
-        //   idMany: imageId,
-        //   jwt: token,
-        // },
-      })
-      getItem()
-      toast.success("Фото успешно удалено!")
-      // setIsLoading(true)
+      });
+      getItem();
+      toast.success("Фото успешно удалено!");
     } catch (error) {
-      toast.error("Что-то пошло не так...")
-      throw error
+      toast.error("Что-то пошло не так...");
+      throw error;
     }
-  }
+  };
 
   useEffect(() => {
-    getItem()
-  }, [])
+    getItem();
+  }, []);
 
   return (
     <div className={styles.product__page}>
@@ -374,8 +361,8 @@ const AdminProductPage = () => {
         <ImageForm
           active={isCreateImageModalOpened}
           onSubmit={(image: File) => {
-            postImage(image)
-            setIsCreateImageModalOpened(false)
+            postImage(image);
+            setIsCreateImageModalOpened(false);
           }}
         />
       </ModalWindow>
@@ -393,8 +380,8 @@ const AdminProductPage = () => {
             <Button
               className={styles["modal__action-btn"]}
               onClick={() => {
-                deleteImage()
-                setIsDeleteImageModalOpened(false)
+                deleteImage();
+                setIsDeleteImageModalOpened(false);
               }}
               isRedirecting={false}
               mode={"dark"}
@@ -413,7 +400,7 @@ const AdminProductPage = () => {
         </div>
       </ModalWindow>
     </div>
-  )
-}
+  );
+};
 
-export default AdminProductPage
+export default AdminProductPage;

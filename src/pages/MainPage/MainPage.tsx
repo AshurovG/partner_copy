@@ -1,16 +1,16 @@
-import styles from "./MainPage.module.scss"
-import AboutCompanyBlock from "components/AboutCompanyBlock"
-import BottlesBlock from "components/BottlesBlock"
-import { useLayoutEffect } from "react"
-import LocksBlock from "components/LocksBlock"
-import PackagesBlock from "components/PackagesBlock"
-import GlassesBlock from "components/GlassesBlock"
-import DecorationsBlock from "components/DecorationsBlock"
+import styles from "./MainPage.module.scss";
+import AboutCompanyBlock from "components/AboutCompanyBlock";
+import BottlesBlock from "components/BottlesBlock";
+import { useLayoutEffect } from "react";
+import LocksBlock from "components/LocksBlock";
+import PackagesBlock from "components/PackagesBlock";
+import GlassesBlock from "components/GlassesBlock";
+import DecorationsBlock from "components/DecorationsBlock";
 
 const MainPage = () => {
   useLayoutEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className={styles["main-page"]}>
@@ -21,7 +21,7 @@ const MainPage = () => {
       <DecorationsBlock />
       <GlassesBlock />
     </div>
-  )
-}
+  );
+};
 
-export default MainPage
+export default MainPage;

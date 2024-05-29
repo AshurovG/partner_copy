@@ -8,21 +8,21 @@ interface DataState {
 const dataSlice = createSlice({
   name: "adminData",
   initialState: {
-    currentImageId: undefined
+    currentImageId: undefined,
   } as DataState,
   reducers: {
     setCurrentImageId(state, action: PayloadAction<number | undefined>) {
-        console.log(action.payload)
-        state.currentImageId = action.payload
+      console.log(action.payload);
+      state.currentImageId = action.payload;
     },
   },
 });
 
 export const useCurrentImageId = () =>
-  useSelector((state: { adminData: DataState }) => state.adminData.currentImageId);
+  useSelector(
+    (state: { adminData: DataState }) => state.adminData.currentImageId
+  );
 
-export const {
-    setCurrentImageId: setCurrentImageIdAction,
-} = dataSlice.actions;
+export const { setCurrentImageId: setCurrentImageIdAction } = dataSlice.actions;
 
 export default dataSlice.reducer;

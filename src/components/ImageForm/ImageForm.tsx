@@ -1,66 +1,64 @@
-import React, { useState, useEffect } from "react"
-import styles from "./ImageForm.module.scss"
-import Button from "components/Button"
-import { Controller, useForm } from "react-hook-form"
+import React, { useState, useEffect } from "react";
+import styles from "./ImageForm.module.scss";
+import Button from "components/Button";
+import { Controller, useForm } from "react-hook-form";
 
 export type FacadeItemFormProps = {
-  onSubmit: (file: File) => void
-  active?: boolean
-}
+  onSubmit: (file: File) => void;
+  active?: boolean;
+};
 
-const MAX_FILE_SIZE = 5 * 1024 * 1024
+const MAX_FILE_SIZE = 5 * 1024 * 1024;
 
 const ImageForm: React.FC<FacadeItemFormProps> = ({ onSubmit, active }) => {
-  const [selectedFile, setSelectedFile] = useState<File | null>(null)
-  const [fileName, setFileName] = useState("")
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [fileName, setFileName] = useState("");
 
   const forma = useForm({
     mode: "onChange",
-  })
+  });
 
-  const { control, setValue, setError, clearErrors } = forma
+  const { control, setValue, setError, clearErrors } = forma;
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
-      const file = event.target.files[0]
+      const file = event.target.files[0];
       if (file.size > MAX_FILE_SIZE) {
-        setValue("image", null)
+        setValue("image", null);
         setError("image", {
           type: "manual",
           message: "Размер файла не должен превышать   5 МБ",
-        })
-        setSelectedFile(null)
-        setFileName("")
+        });
+        setSelectedFile(null);
+        setFileName("");
       } else {
-        setSelectedFile(file)
-        setFileName(file.name)
-        clearErrors("image")
+        setSelectedFile(file);
+        setFileName(file.name);
+        clearErrors("image");
       }
     } else {
-      setSelectedFile(null)
-      setFileName("")
-      clearErrors("image")
+      setSelectedFile(null);
+      setFileName("");
+      clearErrors("image");
     }
-  }
+  };
 
   useEffect(() => {
     if (active) {
-      setSelectedFile(null)
+      setSelectedFile(null);
       clearErrors();
     }
-}, [active]);
+  }, [active]);
 
   return (
     <form
       className={styles.form}
       onSubmit={(event) => {
-        event.preventDefault()
-        selectedFile && onSubmit(selectedFile)
+        event.preventDefault();
+        selectedFile && onSubmit(selectedFile);
       }}
     >
-      <h2 className={styles.form__title}>
-        Заполните данные
-      </h2>
+      <h2 className={styles.form__title}>Заполните данные</h2>
       <div className={styles["form__file"]}>
         <Controller
           control={control}
@@ -77,16 +75,12 @@ const ImageForm: React.FC<FacadeItemFormProps> = ({ onSubmit, active }) => {
                 accept="image/jpeg, image/png, image/gif, image/bmp, image/webp"
                 style={{ display: "none" }}
                 onChange={(e) => {
-                  field.onChange(e)
-                  handleFileChange(e)
+                  field.onChange(e);
+                  handleFileChange(e);
                 }}
               />
               <label htmlFor="input" className={styles["form__file-label"]}>
-                {!selectedFile ? (
-                  <>Выберите файл</>
-                ) : (
-                  <>{fileName}</>
-                )}
+                {!selectedFile ? <>Выберите файл</> : <>{fileName}</>}
               </label>
               {error && (
                 <div className={styles.form__input_message}>
@@ -97,11 +91,17 @@ const ImageForm: React.FC<FacadeItemFormProps> = ({ onSubmit, active }) => {
           )}
         />
       </div>
-      <Button  disabled={!selectedFile} isRedirecting={false} mode="dark" className={styles.form__submit} type="submit">
+      <Button
+        disabled={!selectedFile}
+        isRedirecting={false}
+        mode="dark"
+        className={styles.form__submit}
+        type="submit"
+      >
         Сохранить
       </Button>
     </form>
-  )
-}
+  );
+};
 
-export default ImageForm
+export default ImageForm;

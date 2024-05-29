@@ -1,10 +1,10 @@
-import styles from "./GlassesBlock.module.scss"
-import Button from "components/Button"
-import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
+import styles from "./GlassesBlock.module.scss";
+import Button from "components/Button";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-import "react-image-gallery/styles/scss/image-gallery.scss"
-import Bottles from "../../assets/images/glasses_mock.jpeg"
+import "react-image-gallery/styles/scss/image-gallery.scss";
+import Bottles from "../../assets/images/glasses_mock.jpeg";
 
 const Animation = {
   hidden: { y: 100, opacity: 0 },
@@ -16,7 +16,7 @@ const Animation = {
       duration: 0.5,
     },
   },
-}
+};
 
 const GlassesBlock = () => {
   return (
@@ -46,22 +46,11 @@ const GlassesBlock = () => {
           </div>
         </div>
         <div className={styles.block__inner_image}>
-          {/* <ImageGallery
-            items={mockImages}
-            showThumbnails={false}
-            showPlayButton={false}
-            showFullscreenButton={false}
-            autoPlay={true}
-            slideInterval={2500}
-            showNav={false}
-            slideDuration={1000}
-          /> */}
           <img src={Bottles}></img>
         </div>
-        {/* <img src={Glasses} className={styles.block__inner_image}></img> */}
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
-export default GlassesBlock
+export default GlassesBlock;

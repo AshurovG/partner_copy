@@ -43,9 +43,7 @@ const AdminPage = () => {
       const response = await axios(`https://partnerev.ru/api/categories/${id}`);
       setCards(response.data.products);
       setSelectedCategoryId(id);
-      // setTimeout(() => {
       setIsLoading(false);
-      // }, 10000)
     } catch (error) {
       throw error;
     }
@@ -58,9 +56,6 @@ const AdminPage = () => {
   ) => {
     try {
       const formData = new FormData();
-      //   if (token) {
-      //     formData.append("jwt", token)
-      //   }
       formData.append("title", title);
       formData.append("description", description);
       formData.append("category_id", selectedCategoryId.toString());
@@ -77,7 +72,6 @@ const AdminPage = () => {
           "Content-Type": "multipart/form-data",
         },
       });
-      //   setIsCardsLoading(true)
       toast.success("Объект создан успешно!");
       getProducts(selectedCategoryId);
       setIsCreateWindowOpened(false);

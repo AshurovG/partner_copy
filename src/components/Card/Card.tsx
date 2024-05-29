@@ -1,14 +1,14 @@
-import React from "react"
-import styles from "./Card.module.scss"
-import { clsx } from "clsx"
+import React from "react";
+import styles from "./Card.module.scss";
+import { clsx } from "clsx";
 
 type CardProps = {
-  title: string
-  image: string
-  className?: string
+  title: string;
+  image: string;
+  className?: string;
 
-  onCardClick?: () => void
-}
+  onCardClick?: () => void;
+};
 
 const Card: React.FC<CardProps> = ({
   title,
@@ -20,7 +20,7 @@ const Card: React.FC<CardProps> = ({
     <div
       onClick={() => {
         if (onCardClick) {
-          onCardClick()
+          onCardClick();
         }
       }}
       className={clsx(styles.card, className)}
@@ -28,7 +28,7 @@ const Card: React.FC<CardProps> = ({
       <img className={styles.card__image} src={image} alt="" />
       <h3 className={styles.card__title}>{title}</h3>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

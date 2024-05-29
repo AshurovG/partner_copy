@@ -1,17 +1,17 @@
-import React from "react"
-import styles from "./Button.module.scss"
-import clsx from "clsx"
-import RedirectArrow from "components/Icons/RedirectArrow"
+import React from "react";
+import styles from "./Button.module.scss";
+import clsx from "clsx";
+import RedirectArrow from "components/Icons/RedirectArrow";
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  loading?: boolean
-  children: React.ReactNode
-  state?: boolean
-  className?: string
-  disabled?: boolean
-  isRedirecting: boolean
-  mode: "dark" | "inverse" | "light"
-}
+  loading?: boolean;
+  children: React.ReactNode;
+  state?: boolean;
+  className?: string;
+  disabled?: boolean;
+  isRedirecting: boolean;
+  mode: "dark" | "inverse" | "light";
+};
 
 const Button: React.FC<ButtonProps> = ({
   children,
@@ -27,7 +27,7 @@ const Button: React.FC<ButtonProps> = ({
       ? styles["button-dark"]
       : mode === "inverse"
       ? styles["button-inverse"]
-      : styles["button-light"]
+      : styles["button-light"];
 
   return (
     <button
@@ -46,7 +46,7 @@ const Button: React.FC<ButtonProps> = ({
         />
       )}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

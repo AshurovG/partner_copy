@@ -1,18 +1,16 @@
-import React, { MouseEvent, MouseEventHandler } from "react"
-import styles from "./ModalWindow.module.scss"
-import clsx from "clsx"
+import React, { MouseEvent, MouseEventHandler } from "react";
+import styles from "./ModalWindow.module.scss";
+import clsx from "clsx";
 
 export type ModalProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  active: boolean
-  // setActive: (value: boolean) => void;
-  handleBackdropClick: () => void
-  children: React.ReactNode
-  className?: string
-}
+  active: boolean;
+  handleBackdropClick: () => void;
+  children: React.ReactNode;
+  className?: string;
+};
 
 const ModalWindow: React.FC<ModalProps> = ({
   active,
-  // setActive,
   children,
   className,
   handleBackdropClick,
@@ -20,16 +18,16 @@ const ModalWindow: React.FC<ModalProps> = ({
   const handleClick: MouseEventHandler<HTMLDivElement> = (
     e: MouseEvent<HTMLDivElement>
   ) => {
-    e.stopPropagation()
-  }
+    e.stopPropagation();
+  };
 
   React.useEffect(() => {
     if (active) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
-  }, [active])
+  }, [active]);
 
   return (
     <div
@@ -47,7 +45,7 @@ const ModalWindow: React.FC<ModalProps> = ({
         {children}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ModalWindow
+export default ModalWindow;

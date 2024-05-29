@@ -1,16 +1,16 @@
-import styles from "./DecorationsBlock.module.scss"
-import Button from "components/Button"
-import { Link } from "react-router-dom"
+import styles from "./DecorationsBlock.module.scss";
+import Button from "components/Button";
+import { Link } from "react-router-dom";
 
-import { motion } from "framer-motion"
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import np1 from "../../assets/images/nameplates/med1_mock.jpg"
-import np2 from "../../assets/images/nameplates/med2_mock.jpg"
-import np3 from "../../assets/images/nameplates/med3_mock.jpg"
+import { motion } from "framer-motion";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import np1 from "../../assets/images/nameplates/med1_mock.jpg";
+import np2 from "../../assets/images/nameplates/med2_mock.jpg";
+import np3 from "../../assets/images/nameplates/med3_mock.jpg";
 
-import ArrowLeftIcon from "components/Icons/ArrowLeftIcon"
-import ArrowRightIcon from "components/Icons/ArrowRightIcon"
+import ArrowLeftIcon from "components/Icons/ArrowLeftIcon";
+import ArrowRightIcon from "components/Icons/ArrowRightIcon";
 
 const dataTop = [
   {
@@ -31,7 +31,7 @@ const dataTop = [
   {
     url: np3,
   },
-]
+];
 
 const settings = {
   dots: false,
@@ -57,12 +57,6 @@ const settings = {
         slidesToShow: 3,
       },
     },
-    // {
-    //   breakpoint: 620,
-    //   settings: {
-    //     slidesToShow: 2,
-    //   },
-    // },
     {
       breakpoint: 540,
       settings: {
@@ -76,7 +70,7 @@ const settings = {
       },
     },
   ],
-}
+};
 
 const Animation = {
   hidden: { y: 100, opacity: 0 },
@@ -88,7 +82,7 @@ const Animation = {
       duration: 0.5,
     },
   },
-}
+};
 
 const DecorationsBlock = () => {
   return (
@@ -122,15 +116,13 @@ const DecorationsBlock = () => {
                 <div className={styles["slider_inner--card"]} key={index}>
                   <img src={item.url} alt="hero_img" />
                 </div>
-              )
+              );
             })}
           </Slider>
         </div>
-
-        {/* <img src={Decorations} className={styles.block__inner_image}></img> */}
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
-export default DecorationsBlock
+export default DecorationsBlock;

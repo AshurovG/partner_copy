@@ -1,20 +1,20 @@
-import { useEffect } from "react"
-import ImageGallery from "react-image-gallery"
-import "react-image-gallery/styles/scss/image-gallery.scss"
-import { useDispatch } from "react-redux"
-import { setCurrentImageIdAction } from "slices/AdminSlice"
-import "./Slider.scss"
+import { useEffect } from "react";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/scss/image-gallery.scss";
+import { useDispatch } from "react-redux";
+import { setCurrentImageIdAction } from "slices/AdminSlice";
+import "./Slider.scss";
 
 type ImageType = {
-  id?: number
-  original: string
-  thumbnail: string
-}
+  id?: number;
+  original: string;
+  thumbnail: string;
+};
 
 interface SliderProps {
-  images: ImageType[]
-  className: string
-  isNotAutomatic?: boolean
+  images: ImageType[];
+  className: string;
+  isNotAutomatic?: boolean;
 }
 
 const Slider: React.FC<SliderProps> = ({
@@ -22,18 +22,17 @@ const Slider: React.FC<SliderProps> = ({
   className,
   isNotAutomatic,
 }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   useEffect(() => {
     if (isNotAutomatic) {
-      dispatch(setCurrentImageIdAction(images[0].id))
+      dispatch(setCurrentImageIdAction(images[0].id));
     }
-  }, [images])
+  }, [images]);
   return (
     <div className={className}>
       <ImageGallery
         items={images}
         thumbnailPosition="left"
-        // showThumbnails={false}
         showPlayButton={false}
         showFullscreenButton={false}
         autoPlay={false}
@@ -46,7 +45,7 @@ const Slider: React.FC<SliderProps> = ({
         }
       />
     </div>
-  )
-}
+  );
+};
 
-export default Slider
+export default Slider;

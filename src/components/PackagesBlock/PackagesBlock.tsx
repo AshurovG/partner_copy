@@ -1,10 +1,10 @@
-import styles from "./PackagesBlock.module.scss"
-import Button from "components/Button"
-import Complex from "../../assets/images/package1_mock.jpg"
-import Simple from "../../assets/images/package2_mock.jpg"
-import { Link } from "react-router-dom"
+import styles from "./PackagesBlock.module.scss";
+import Button from "components/Button";
+import Complex from "../../assets/images/package1_mock.jpg";
+import Simple from "../../assets/images/package2_mock.jpg";
+import { Link } from "react-router-dom";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const Animation = {
   hidden: { y: 100, opacity: 0 },
@@ -16,7 +16,7 @@ const Animation = {
       duration: 0.5,
     },
   },
-}
+};
 const LineAnimation = {
   hidden: { y: 100, opacity: 0 },
   visible: {
@@ -27,7 +27,7 @@ const LineAnimation = {
       duration: 1,
     },
   },
-}
+};
 
 const PackagesBlock = () => {
   return (
@@ -85,7 +85,7 @@ const PackagesBlock = () => {
         </motion.div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PackagesBlock
+export default PackagesBlock;
